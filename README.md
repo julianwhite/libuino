@@ -123,7 +123,7 @@ On the Arduino side, after installing arduino_libuino into your
 Arduino environment, the arduino_libuino/examples should appear
 in your examples in your Arduino IDE.  If not then you may just
 copy each of the example projects into you sketchbook manually.
-Please note that each and every example C program in the 
+Please note that for each and every example C program in the 
 libuino/examples/ folder, there is a corresponding, similarly
 named sketch (.ino file) in libuino/arduino_libuino/examples/.
 
