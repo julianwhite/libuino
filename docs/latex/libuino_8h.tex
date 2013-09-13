@@ -1,0 +1,814 @@
+\hypertarget{libuino_8h}{\section{libuino.\-h \-File \-Reference}
+\label{libuino_8h}\index{libuino.\-h@{libuino.\-h}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$termios.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include $<$sys/ioctl.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union__ino__int16}{\-\_\-ino\-\_\-int16}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 16-\/bit integers and byte arrays. \end{DoxyCompactList}\item 
+union \hyperlink{union__ino__int32}{\-\_\-ino\-\_\-int32}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 32-\/bit integers and byte arrays. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__ino__connection__s}{\-\_\-ino\-\_\-connection\-\_\-s}
+\begin{DoxyCompactList}\small\item\em \-Data type for storing an \-Arduino connection's settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{libuino_8h_a727172284bd413b1f769e1d3aa87ad57}{\#define {\bfseries \-I\-N\-O\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-A\-I\-T}~3500000}\label{libuino_8h_a727172284bd413b1f769e1d3aa87ad57}
+
+\item 
+\hypertarget{libuino_8h_a8b6afc58924ea6de37082e0610e55112}{\#define {\bfseries \-I\-N\-O\-\_\-\-N\-O\-\_\-\-W\-A\-I\-T}~0}\label{libuino_8h_a8b6afc58924ea6de37082e0610e55112}
+
+\item 
+\hypertarget{libuino_8h_a4415e840c9a98aa6460e1626e40170f0}{\#define {\bfseries \-I\-N\-O\-\_\-\-N\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T}~0}\label{libuino_8h_a4415e840c9a98aa6460e1626e40170f0}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \hyperlink{union__ino__int16}{\-\_\-ino\-\_\-int16} \hyperlink{libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}{ino\-\_\-int16}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 16-\/bit integers and byte arrays. \end{DoxyCompactList}\item 
+typedef union \hyperlink{union__ino__int32}{\-\_\-ino\-\_\-int32} \hyperlink{libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}{ino\-\_\-int32}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 32-\/bit integers and byte arrays. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__ino__connection__s}{\-\_\-ino\-\_\-connection\-\_\-s} \hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Data type for storing an \-Arduino connection's settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$ \hyperlink{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}{ino\-\_\-connection\-\_\-new} (char $\ast$port, int baud, int connect\-\_\-wait)
+\begin{DoxyCompactList}\small\item\em \-Create a new character-\/oriented \-Arduino connection configuration object. \end{DoxyCompactList}\item 
+\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$ \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw} (char $\ast$port, int baud, int connect\-\_\-wait, int frame\-\_\-size\-\_\-bytes, int read\-\_\-timeout)
+\begin{DoxyCompactList}\small\item\em \-Create a new raw, unprocessed \-Arduino connection configuration object. \end{DoxyCompactList}\item 
+void \hyperlink{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}{ino\-\_\-connection\-\_\-destroy} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Close \-Arduino connection and free config object from memory. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_ac9d1b9fe2372835d78dc6309bf01f8ff}{ino\-\_\-open} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Open a configured serial port to an \-Arduino. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_a19a9daada68c7b96131bf9f216b5e355}{ino\-\_\-close} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Close \-Arduino connection, but retain the ino\-\_\-connection\-\_\-t configuration. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_a0daef65f1f67e985508f7839cafa4e88}{ino\-\_\-is\-\_\-open} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Test whether the given ino\-\_\-connection\-\_\-t is open. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, char $\ast$buf, int max\-\_\-bytes)
+\begin{DoxyCompactList}\small\item\em \-Read a string from the \-Arduino. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_ae4f2f710317ba0e604e604bd8be0ed78}{ino\-\_\-cast\-\_\-int} (char $\ast$frame, int pos)
+\begin{DoxyCompactList}\small\item\em \-Cast white-\/space delimited string data to int by position in the string. \end{DoxyCompactList}\item 
+long \hyperlink{libuino_8h_af4b128e780c2c847bfef8e89d8893268}{ino\-\_\-cast\-\_\-long} (char $\ast$frame, int pos)
+\begin{DoxyCompactList}\small\item\em \-Cast white-\/space delimited string data to long by position in the string. \end{DoxyCompactList}\item 
+float \hyperlink{libuino_8h_a8026e8871780abe239ef26152f51afb9}{ino\-\_\-cast\-\_\-float} (char $\ast$frame, int pos)
+\begin{DoxyCompactList}\small\item\em \-Cast white-\/space delimited string data to float by position in the string. \end{DoxyCompactList}\item 
+double \hyperlink{libuino_8h_acf46f72073908c899877aadc07a505f7}{ino\-\_\-cast\-\_\-double} (char $\ast$frame, int pos)
+\begin{DoxyCompactList}\small\item\em \-Cast white-\/space delimited string data to double by position in the string. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_ad282782c4b6b8d24847a3c0877aaa2ae}{ino\-\_\-read\-\_\-raw} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint8\-\_\-t $\ast$buf, int frame\-\_\-size\-\_\-bytes)
+\begin{DoxyCompactList}\small\item\em \-Read raw bytes from a raw \-Arduino serial connection. \end{DoxyCompactList}\item 
+int16\-\_\-t \hyperlink{libuino_8h_ac819cef13651693429c55237e67e117d}{ino\-\_\-read\-\_\-int16} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Read a single signed 16-\/bit integer from the given \-Arduino raw connection. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{libuino_8h_a5cd3d987514b700d2def4b9858ddc604}{ino\-\_\-read\-\_\-uint16} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Read a single unsigned 16-\/bit integer from the given \-Arduino raw connection. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_acb71721ea78b0f99ea1106f4e3d1ee4b}{ino\-\_\-read\-\_\-int16s} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, int16\-\_\-t $\ast$int\-\_\-buf, int int\-\_\-count)
+\begin{DoxyCompactList}\small\item\em \-Read multiple signed 16-\/bit integers from an \-Arduino raw connection at once. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_a394b933c2567a8713e85acbf1c47d2fe}{ino\-\_\-read\-\_\-uint16s} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint16\-\_\-t $\ast$int\-\_\-buf, int int\-\_\-count)
+\begin{DoxyCompactList}\small\item\em \-Read multiple unsigned 16-\/bit integers from an \-Arduino raw connection at once. \end{DoxyCompactList}\item 
+int32\-\_\-t \hyperlink{libuino_8h_a2a7f41fb2f26a6059b66e2520a3e39db}{ino\-\_\-read\-\_\-int32} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Read a single signed 32-\/bit integer from the given \-Arduino raw connection. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{libuino_8h_a5f831506166391b6feb63ff2fa3a9ac7}{ino\-\_\-read\-\_\-uint32} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx)
+\begin{DoxyCompactList}\small\item\em \-Read a single unsigned 32-\/bit integer from the given \-Arduino raw connection. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_aa949bbef2fca14648c0adfbfe02fc3e1}{ino\-\_\-read\-\_\-int32s} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, int32\-\_\-t $\ast$int\-\_\-buf, int int\-\_\-count)
+\begin{DoxyCompactList}\small\item\em \-Read multiple signed 32-\/bit integers from an \-Arduino raw connection at once. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_a7fd695712644b0a51ef003cfa1903143}{ino\-\_\-read\-\_\-uint32s} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint32\-\_\-t $\ast$int\-\_\-buf, int int\-\_\-count)
+\begin{DoxyCompactList}\small\item\em \-Read multiple unsigned 32-\/bit integers from an \-Arduino raw connection at once. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_a1ff0dbebc976c2e8a8816a3423e70d91}{ino\-\_\-send\-\_\-raw} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint8\-\_\-t $\ast$buf, int frame\-\_\-size\-\_\-bytes)
+\begin{DoxyCompactList}\small\item\em \-Send an array of raw bytes to the \-Arduino through the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_adf8ab4ea49b533f9a37894571a03ed50}{ino\-\_\-send\-\_\-int16} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, int16\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em \-Send a single signed 16-\/bit integer to the \-Arduino through the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_ad4682497c07404826cbce095ec703ffd}{ino\-\_\-send\-\_\-uint16} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint16\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em \-Send a single unsigned 16-\/bit integer to the \-Arduino through the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_ada13d8c25db40601b9a6ff02b44eab46}{ino\-\_\-send\-\_\-int32} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, int32\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em \-Send a single signed 32-\/bit integer to the \-Arduino through the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_aeadf0136faafafeaef5a1a6e50a00dd7}{ino\-\_\-send\-\_\-uint32} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, uint32\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em \-Send a single unsigned 32-\/bit integer to the \-Arduino through the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{libuino_8h_aaa3c5154ef511177e3b960a08098fa18}{ino\-\_\-send\-\_\-char} (\hyperlink{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{ino\-\_\-connection\-\_\-t} $\ast$cnx, char c)
+\begin{DoxyCompactList}\small\item\em \-Send a single char through the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyVersion}{\-Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{\-Author}
+\-Julian \-White 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-August 26, 2013 by \-Julian \-White
+\end{DoxyCopyright}
+\hypertarget{libuino_8h_LICENSE}{}\subsection{\-L\-I\-C\-E\-N\-S\-E}\label{libuino_8h_LICENSE}
+\-This program is free software; you can redistribute it and/or modify it under the terms of the \-G\-N\-U \-Lesser \-General \-Public \-License as published by the \-Free \-Software \-Foundation; either version 3 of the \-License, or (at your option) any later version.
+
+\-This program is distributed in the hope that it will be useful, but \-W\-I\-T\-H\-O\-U\-T \-A\-N\-Y \-W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E. \-See the \-G\-N\-U \-Lesser \-General \-Public \-License for more details at \href{http://www.gnu.org/licenses/lgpl.html}{\tt http\-://www.\-gnu.\-org/licenses/lgpl.\-html}\hypertarget{libuino_8h_DESCRIPTION}{}\subsection{\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N}\label{libuino_8h_DESCRIPTION}
+\-C library to ease serial communication with \-Arduino microcontrollers, especially sending and receiving numeric data to/from an \-Arduino via \-U\-A\-R\-T/serial/\-U\-S\-B. \-Also included in this library are functions to convert string data into numeric types. \-Libuino allows for both processed character data and unprocessed raw numeric data transfers. \-In order to write \-C applications that will interface with an arduino, simply include \hyperlink{libuino_8h}{libuino.\-h} in the code you write for the \-P\-C side of the serial connection.
+
+\-In order to send and receive text/character data, simply create a new ino\-\_\-connection\-\_\-t object using the \hyperlink{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}{ino\-\_\-connection\-\_\-new()} function. \-With this character-\/oriented configuration, you may call \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read()} to read a string. \-If the string returning from the \-Arduino is known to be a space-\/delimited string of numeric values, then you may use the \hyperlink{libuino_8h_ae4f2f710317ba0e604e604bd8be0ed78}{ino\-\_\-cast\-\_\-int()}, \hyperlink{libuino_8h_af4b128e780c2c847bfef8e89d8893268}{ino\-\_\-cast\-\_\-long()}, \hyperlink{libuino_8h_a8026e8871780abe239ef26152f51afb9}{ino\-\_\-cast\-\_\-float()}, and \hyperlink{libuino_8h_acf46f72073908c899877aadc07a505f7}{ino\-\_\-cast\-\_\-double()} functions to quickly cast them to numeric types according to their position number. \-Although if normally reading all numeric values in the order they appear, you may find using the standard \-C functions strtol(), strtof(), and strtod() slightly faster if that is important. \-The ino\-\_\-cast\-\_\-$\ast$() functions are quite convenient though, especially for quickly grabbing a value at a specific position in the string without having to count white-\/spaces.
+
+\-In order to transfer raw, unprocessed bytes, you should use the \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} function to create a ino\-\_\-connection\-\_\-t object. \-The \char`\"{}raw\char`\"{} functions will send and receive 16-\/bit and 32-\/bit signed or unsigned integers. \-All integers are converted to network byte order (i.\-e., big endian) for sending and then back into host byte order when receiving integer data. \-To use the raw data functions in the library, more than likely you will also want to include \hyperlink{arduino__libuino_8h}{arduino\-\_\-libuino.\-h} in most sketches that will need to interface with the libuino library through the serial port. 
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-connection\-\_\-t@{ino\-\_\-connection\-\_\-t}}
+\index{ino\-\_\-connection\-\_\-t@{ino\-\_\-connection\-\_\-t}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-connection\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-ino\-\_\-connection\-\_\-s}
+ {\bf ino\-\_\-connection\-\_\-t}}}\label{libuino_8h_a5e4c86fa010724a542176aa1cb34fb08}
+
+
+\-Data type for storing an \-Arduino connection's settings. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-int16@{ino\-\_\-int16}}
+\index{ino\-\_\-int16@{ino\-\_\-int16}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf \-\_\-ino\-\_\-int16}
+ {\bf ino\-\_\-int16}}}\label{libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}
+
+
+\-Data type for converting between signed and unsigned 16-\/bit integers and byte arrays. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-int32@{ino\-\_\-int32}}
+\index{ino\-\_\-int32@{ino\-\_\-int32}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf \-\_\-ino\-\_\-int32}
+ {\bf ino\-\_\-int32}}}\label{libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}
+
+
+\-Data type for converting between signed and unsigned 32-\/bit integers and byte arrays. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{libuino_8h_acf46f72073908c899877aadc07a505f7}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-cast\-\_\-double@{ino\-\_\-cast\-\_\-double}}
+\index{ino\-\_\-cast\-\_\-double@{ino\-\_\-cast\-\_\-double}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-cast\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ino\-\_\-cast\-\_\-double} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{frame, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_acf46f72073908c899877aadc07a505f7}
+
+
+\-Cast white-\/space delimited string data to double by position in the string. 
+
+\-Extract numeric value at position, \char`\"{}pos,\char`\"{} in the string. \-E.\-g., in order to extract a double at the beginning of the string, use pos = 0. \-In order to extract the second numeric value in the string, use pos = 1, etc. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame} & \-Frame of characters returned by \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read()}. \\
+\hline
+{\em pos} & \-Position in the frame of numeric values, starting with zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The double read at the given position, or zero on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a8026e8871780abe239ef26152f51afb9}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-cast\-\_\-float@{ino\-\_\-cast\-\_\-float}}
+\index{ino\-\_\-cast\-\_\-float@{ino\-\_\-cast\-\_\-float}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-cast\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ino\-\_\-cast\-\_\-float} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{frame, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a8026e8871780abe239ef26152f51afb9}
+
+
+\-Cast white-\/space delimited string data to float by position in the string. 
+
+\-Extract numeric value at position, \char`\"{}pos,\char`\"{} in the string. \-E.\-g., in order to extract a float at the beginning of the string, use pos = 0. \-In order to extract the second numeric value in the string, use pos = 1, etc. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame} & \-Frame of characters returned by \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read()}. \\
+\hline
+{\em pos} & \-Position in the frame of numeric values, starting with zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The float read at the given position, or zero on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ae4f2f710317ba0e604e604bd8be0ed78}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-cast\-\_\-int@{ino\-\_\-cast\-\_\-int}}
+\index{ino\-\_\-cast\-\_\-int@{ino\-\_\-cast\-\_\-int}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-cast\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-cast\-\_\-int} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{frame, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ae4f2f710317ba0e604e604bd8be0ed78}
+
+
+\-Cast white-\/space delimited string data to int by position in the string. 
+
+\-Extract numeric value at position, \char`\"{}pos,\char`\"{} in the string. \-E.\-g., in order to extract an int at the beginning of the string, use pos = 0. \-In order to extract the second numeric value in the string, use pos = 1, etc. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame} & \-Frame of characters returned by \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read()}. \\
+\hline
+{\em pos} & \-Position in the frame of numeric values, starting with zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The integer read at the given position, or zero on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_af4b128e780c2c847bfef8e89d8893268}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-cast\-\_\-long@{ino\-\_\-cast\-\_\-long}}
+\index{ino\-\_\-cast\-\_\-long@{ino\-\_\-cast\-\_\-long}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-cast\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long {\bf ino\-\_\-cast\-\_\-long} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{frame, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_af4b128e780c2c847bfef8e89d8893268}
+
+
+\-Cast white-\/space delimited string data to long by position in the string. 
+
+\-Extract numeric value at position, \char`\"{}pos,\char`\"{} in the string. \-E.\-g., in order to extract a long at the beginning of the string, use pos = 0. \-In order to extract the second numeric value in the string, use pos = 1, etc. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame} & \-Frame of characters returned by \hyperlink{libuino_8h_afe487fce653b5248bbdae18de6953803}{ino\-\_\-read()}. \\
+\hline
+{\em pos} & \-Position in the frame of numeric values, starting with zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The long read at the given position, or zero on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a19a9daada68c7b96131bf9f216b5e355}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-close@{ino\-\_\-close}}
+\index{ino\-\_\-close@{ino\-\_\-close}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-close} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a19a9daada68c7b96131bf9f216b5e355}
+
+
+\-Close \-Arduino connection, but retain the ino\-\_\-connection\-\_\-t configuration. 
+
+\-Use this function to close the \-Arduino connection port temporarily. \-To completely destroy the ino\-\_\-connection\-\_\-t object, freeing memory, use the \hyperlink{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}{ino\-\_\-connection\-\_\-destroy()} function instead. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object to close. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+-\/1 on error and zero on success. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-connection\-\_\-destroy@{ino\-\_\-connection\-\_\-destroy}}
+\index{ino\-\_\-connection\-\_\-destroy@{ino\-\_\-connection\-\_\-destroy}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-connection\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-connection\-\_\-destroy} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}
+
+
+\-Close \-Arduino connection and free config object from memory. 
+
+\-Use this function when the connection is no longer needed. \-To merely close the connection and retain it to be opened again later, use the \hyperlink{libuino_8h_a19a9daada68c7b96131bf9f216b5e355}{ino\-\_\-close()} function instead. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object to be destroyed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-connection\-\_\-new@{ino\-\_\-connection\-\_\-new}}
+\index{ino\-\_\-connection\-\_\-new@{ino\-\_\-connection\-\_\-new}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-connection\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ino\-\_\-connection\-\_\-t}$\ast$ {\bf ino\-\_\-connection\-\_\-new} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{port, }
+\item[{int}]{baud, }
+\item[{int}]{connect\-\_\-wait}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}
+
+
+\-Create a new character-\/oriented \-Arduino connection configuration object. 
+
+\-Use this function to configure a connection for transfering character data to and from the \-Arduino through the serial port. \-You can receive as many characters as your buffer will hold, but each frame of character data should be terminated by a new line (line feed) character. \-This connection can be opened and closed as many times as you like, but must be freed from memory when it is no longer needed by calling \hyperlink{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}{ino\-\_\-connection\-\_\-destroy()}. \-If your \-Arduino model does not automatically reboot each time a serial connection is made to it or this feature has been disabled for your \-Arduino, then you may use \-I\-N\-O\-\_\-\-N\-O\-\_\-\-W\-A\-I\-T for your connect\-\_\-wait for faster connection times. \-You may also use \-I\-N\-O\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-A\-I\-T which should be a safe number of microseconds to wait for the \-Arduino to reboot before trying to configure the connection. \-The baud constants are part of the \-C standard library and are included in the termios.\-h or bits/termios.\-h library header, e.\-g., \-B9600 or \-B115200. 
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-String representation of port to use, e.\-g., tty\-A\-C\-M0 or \-C\-O\-M1. \\
+\hline
+{\em baud} & \-Bit-\/rate, i.\-e., one of \-B4800, \-B9600, \-B19200,... \-B115200, etc. \\
+\hline
+{\em connect\-\_\-wait} & \-Microseconds to wait for \-Arduino to auto-\/reboot on connect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to new ino\-\_\-connection\-\_\-t object containing new configuration. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-connection\-\_\-raw@{ino\-\_\-connection\-\_\-raw}}
+\index{ino\-\_\-connection\-\_\-raw@{ino\-\_\-connection\-\_\-raw}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-connection\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ino\-\_\-connection\-\_\-t}$\ast$ {\bf ino\-\_\-connection\-\_\-raw} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{port, }
+\item[{int}]{baud, }
+\item[{int}]{connect\-\_\-wait, }
+\item[{int}]{frame\-\_\-size\-\_\-bytes, }
+\item[{int}]{read\-\_\-timeout}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}
+
+
+\-Create a new raw, unprocessed \-Arduino connection configuration object. 
+
+\-Use this function to configure a connection for transfering raw byte or integer data to and from the \-Arduino through the serial port. \-This connection can be opened and closed as many times as you like, but must be freed from memory when it is no longer needed by calling \hyperlink{libuino_8h_a820d73e9e75da9601aebb4e4dada4271}{ino\-\_\-connection\-\_\-destroy()}. \-If your \-Arduino model does not automatically reboot each time a serial connection is made to it or this feature has been disabled for your \-Arduino, then you may use \-I\-N\-O\-\_\-\-N\-O\-\_\-\-W\-A\-I\-T for your connect\-\_\-wait for faster connection times. \-You may also use \-I\-N\-O\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-A\-I\-T which should be a safe number of microseconds to wait for the \-Arduino to reboot before trying to configure the connection. \-The baud constants are part of the \-C standard library and are included in the termios.\-h or bits/termios.\-h library header, e.\-g., \-B9600 or \-B115200. read\-\_\-timeout is the time to wait between bytes before timing out. \-You may use \-I\-N\-O\-\_\-\-N\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T if you are waiting for an exact number of bytes. \-Otherwise the read\-\_\-timeout should be set to the number of 1/10ths of a second to wait, e.\-g., a read\-\_\-timeout of 5 will wait 5/10ths or 1/2 of a second between bytes before giving up altogether. 
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-String representation of port to use, e.\-g., tty\-A\-C\-M0 or \-C\-O\-M1. \\
+\hline
+{\em baud} & \-Bit-\/rate, i.\-e., one of \-B4800, \-B9600, \-B19200,... \-B115200, etc. \\
+\hline
+{\em connect\-\_\-wait} & \-Microseconds to wait for \-Arduino to auto-\/reboot on connect. \\
+\hline
+{\em frame\-\_\-size\-\_\-bytes} & \-Byte-\/length of frame(s) to be read. \\
+\hline
+{\em read\-\_\-timeout} & 1/10ths of a second to wait between bytes before timeout. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to new ino\-\_\-connection\-\_\-t object containing new configuration. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a0daef65f1f67e985508f7839cafa4e88}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-is\-\_\-open@{ino\-\_\-is\-\_\-open}}
+\index{ino\-\_\-is\-\_\-open@{ino\-\_\-is\-\_\-open}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-is\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-is\-\_\-open} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a0daef65f1f67e985508f7839cafa4e88}
+
+
+\-Test whether the given ino\-\_\-connection\-\_\-t is open. 
+
+\-Use this function to determine whether the port is open for reading and writing or if there was an error opening the connection or if the connection has been closed. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+1 if open and 0 if closed. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ac9d1b9fe2372835d78dc6309bf01f8ff}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-open@{ino\-\_\-open}}
+\index{ino\-\_\-open@{ino\-\_\-open}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-open} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ac9d1b9fe2372835d78dc6309bf01f8ff}
+
+
+\-Open a configured serial port to an \-Arduino. 
+
+\-Use this function to open a connection created using either of \hyperlink{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}{ino\-\_\-connection\-\_\-new()} or \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()}. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object to open. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+-\/1 on error and zero on success. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_afe487fce653b5248bbdae18de6953803}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read@{ino\-\_\-read}}
+\index{ino\-\_\-read@{ino\-\_\-read}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{char $\ast$}]{buf, }
+\item[{int}]{max\-\_\-bytes}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_afe487fce653b5248bbdae18de6953803}
+
+
+\-Read a string from the \-Arduino. 
+
+\-Read processed, canonical, string-\/oriented i/o, terminated by new line character. \-The connection must be created using the \hyperlink{libuino_8h_aa1c47e238b86cf8f45f2a6cc30d90276}{ino\-\_\-connection\-\_\-new()} function and opened using \hyperlink{libuino_8h_ac9d1b9fe2372835d78dc6309bf01f8ff}{ino\-\_\-open()}. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to be read. \\
+\hline
+{\em buf} & \-String buffer into which to read the string from the \-Arduino. \\
+\hline
+{\em max\-\_\-bytes} & \-Maximum number of bytes to read, e.\-g., size of buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+-\/1 on error or number of bytes read otherwise. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ac819cef13651693429c55237e67e117d}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-int16@{ino\-\_\-read\-\_\-int16}}
+\index{ino\-\_\-read\-\_\-int16@{ino\-\_\-read\-\_\-int16}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t {\bf ino\-\_\-read\-\_\-int16} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ac819cef13651693429c55237e67e117d}
+
+
+\-Read a single signed 16-\/bit integer from the given \-Arduino raw connection. 
+
+\-Reads 2 bytes from the serial port and converts them from network byte order into host byte order and casts them to a signed 16-\/bit integer. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 2 byte frame size. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The int16\-\_\-t read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_acb71721ea78b0f99ea1106f4e3d1ee4b}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-int16s@{ino\-\_\-read\-\_\-int16s}}
+\index{ino\-\_\-read\-\_\-int16s@{ino\-\_\-read\-\_\-int16s}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int16s}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read\-\_\-int16s} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{int16\-\_\-t $\ast$}]{int\-\_\-buf, }
+\item[{int}]{int\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_acb71721ea78b0f99ea1106f4e3d1ee4b}
+
+
+\-Read multiple signed 16-\/bit integers from an \-Arduino raw connection at once. 
+
+\-Reads 2 bytes per integer from the serial port and converts them from network byte order into host byte order and casts them to signed 16-\/bit integers. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 2 bytes per integer frame size, i.\-e., three 2-\/byte integers would require a connection frame size of 6 bytes. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+{\em int\-\_\-buf} & \-Pointer to the beginning of an array of int16\-\_\-t. \\
+\hline
+{\em int\-\_\-count} & \-The number of integers to attempt reading $<$= array length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of integers read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a2a7f41fb2f26a6059b66e2520a3e39db}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-int32@{ino\-\_\-read\-\_\-int32}}
+\index{ino\-\_\-read\-\_\-int32@{ino\-\_\-read\-\_\-int32}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t {\bf ino\-\_\-read\-\_\-int32} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a2a7f41fb2f26a6059b66e2520a3e39db}
+
+
+\-Read a single signed 32-\/bit integer from the given \-Arduino raw connection. 
+
+\-Reads 4 bytes from the serial port and converts them from network byte order into host byte order and casts them to a signed 32-\/bit integer. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 4 byte frame size. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The int32\-\_\-t read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_aa949bbef2fca14648c0adfbfe02fc3e1}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-int32s@{ino\-\_\-read\-\_\-int32s}}
+\index{ino\-\_\-read\-\_\-int32s@{ino\-\_\-read\-\_\-int32s}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int32s}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read\-\_\-int32s} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{int32\-\_\-t $\ast$}]{int\-\_\-buf, }
+\item[{int}]{int\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_aa949bbef2fca14648c0adfbfe02fc3e1}
+
+
+\-Read multiple signed 32-\/bit integers from an \-Arduino raw connection at once. 
+
+\-Reads 4 bytes per integer from the serial port and converts them from network byte order into host byte order and casts them to signed 32-\/bit integers. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 4 bytes per integer frame size, i.\-e., three 4-\/byte integers would require a connection frame size of 12 bytes. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+{\em int\-\_\-buf} & \-Pointer to the beginning of an array of int32\-\_\-t. \\
+\hline
+{\em int\-\_\-count} & \-The number of integers to attempt reading $<$= array length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of integers read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ad282782c4b6b8d24847a3c0877aaa2ae}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-raw@{ino\-\_\-read\-\_\-raw}}
+\index{ino\-\_\-read\-\_\-raw@{ino\-\_\-read\-\_\-raw}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read\-\_\-raw} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{int}]{frame\-\_\-size\-\_\-bytes}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ad282782c4b6b8d24847a3c0877aaa2ae}
+
+
+\-Read raw bytes from a raw \-Arduino serial connection. 
+
+\-Reads an exact number of raw bytes from the serial port into an array of uint8\-\_\-t. \-Use this function for more complex or custom interpretation of the bytes delivered. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()}. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+{\em buf} & \-Pointer to the beginning of an array of uint8\-\_\-t. \\
+\hline
+{\em frame\-\_\-size\-\_\-bytes} & \-The exact number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes read, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a5cd3d987514b700d2def4b9858ddc604}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-uint16@{ino\-\_\-read\-\_\-uint16}}
+\index{ino\-\_\-read\-\_\-uint16@{ino\-\_\-read\-\_\-uint16}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t {\bf ino\-\_\-read\-\_\-uint16} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a5cd3d987514b700d2def4b9858ddc604}
+
+
+\-Read a single unsigned 16-\/bit integer from the given \-Arduino raw connection. 
+
+\-Reads 2 bytes from the serial port and converts them from network byte order into host byte order and casts them to an unsigned 16-\/bit integer. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 2 byte frame size. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The uint16\-\_\-t read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a394b933c2567a8713e85acbf1c47d2fe}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-uint16s@{ino\-\_\-read\-\_\-uint16s}}
+\index{ino\-\_\-read\-\_\-uint16s@{ino\-\_\-read\-\_\-uint16s}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint16s}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read\-\_\-uint16s} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint16\-\_\-t $\ast$}]{int\-\_\-buf, }
+\item[{int}]{int\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a394b933c2567a8713e85acbf1c47d2fe}
+
+
+\-Read multiple unsigned 16-\/bit integers from an \-Arduino raw connection at once. 
+
+\-Reads 2 bytes per integer from the serial port and converts them from network byte order into host byte order and casts them to unsigned 16-\/bit integers. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 2 bytes per integer frame size, i.\-e., three 2-\/byte integers would require a connection frame size of 6 bytes. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+{\em int\-\_\-buf} & \-Pointer to the beginning of an array of uint16\-\_\-t. \\
+\hline
+{\em int\-\_\-count} & \-The number of integers to attempt reading $<$= array length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of integers read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a5f831506166391b6feb63ff2fa3a9ac7}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-uint32@{ino\-\_\-read\-\_\-uint32}}
+\index{ino\-\_\-read\-\_\-uint32@{ino\-\_\-read\-\_\-uint32}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf ino\-\_\-read\-\_\-uint32} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a5f831506166391b6feb63ff2fa3a9ac7}
+
+
+\-Read a single unsigned 32-\/bit integer from the given \-Arduino raw connection. 
+
+\-Reads 4 bytes from the serial port and converts them from network byte order into host byte order and casts them to an unsigned 32-\/bit integer. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 4 byte frame size. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The uint32\-\_\-t read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a7fd695712644b0a51ef003cfa1903143}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-read\-\_\-uint32s@{ino\-\_\-read\-\_\-uint32s}}
+\index{ino\-\_\-read\-\_\-uint32s@{ino\-\_\-read\-\_\-uint32s}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint32s}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-read\-\_\-uint32s} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint32\-\_\-t $\ast$}]{int\-\_\-buf, }
+\item[{int}]{int\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a7fd695712644b0a51ef003cfa1903143}
+
+
+\-Read multiple unsigned 32-\/bit integers from an \-Arduino raw connection at once. 
+
+\-Reads 4 bytes per integer from the serial port and converts them from network byte order into host byte order and casts them to unsigned 32-\/bit integers. \-The corresponding \-Arduino library \char`\"{}send\char`\"{} function will send the integer byte by byte in network byte order. \-The function requires an ino\-\_\-connection\-\_\-t object created using \hyperlink{libuino_8h_ace13db241a78c0e5e6000ab51ffd8633}{ino\-\_\-connection\-\_\-raw()} with a 4 bytes per integer frame size, i.\-e., three 4-\/byte integers would require a connection frame size of 12 bytes. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object from which to read data. \\
+\hline
+{\em int\-\_\-buf} & \-Pointer to the beginning of an array of uint32\-\_\-t. \\
+\hline
+{\em int\-\_\-count} & \-The number of integers to attempt reading $<$= array length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of integers read from the serial port. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_aaa3c5154ef511177e3b960a08098fa18}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-char@{ino\-\_\-send\-\_\-char}}
+\index{ino\-\_\-send\-\_\-char@{ino\-\_\-send\-\_\-char}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-char} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_aaa3c5154ef511177e3b960a08098fa18}
+
+
+\-Send a single char through the serial port. 
+
+\-Sends a single character through the serial port to the \-Arduino. \-This is just a wrapper function for 
+\begin{DoxyCode}
+   write(cnx->fd, c, 1);
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{\-Parameters}
+{\em c} & \-The character to send to the \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+1 on success, or -\/1 on failure. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_adf8ab4ea49b533f9a37894571a03ed50}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-int16@{ino\-\_\-send\-\_\-int16}}
+\index{ino\-\_\-send\-\_\-int16@{ino\-\_\-send\-\_\-int16}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-int16} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{int16\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_adf8ab4ea49b533f9a37894571a03ed50}
+
+
+\-Send a single signed 16-\/bit integer to the \-Arduino through the serial port. 
+
+\-Converts an int16\-\_\-t to network byte order and sends it byte by byte through the given serial port connection to the \-Arduino on the other end. \-Network byte order raw integers can be read by the \-Arduino using the corresponding \char`\"{}read\char`\"{} function in the \-Arduino library, \hyperlink{arduino__libuino_8h}{arduino\-\_\-libuino.\-h} . 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object through which to send data. \\
+\hline
+{\em val} & int16\-\_\-t to be sent to \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes actually sent, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ada13d8c25db40601b9a6ff02b44eab46}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-int32@{ino\-\_\-send\-\_\-int32}}
+\index{ino\-\_\-send\-\_\-int32@{ino\-\_\-send\-\_\-int32}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-int32} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{int32\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ada13d8c25db40601b9a6ff02b44eab46}
+
+
+\-Send a single signed 32-\/bit integer to the \-Arduino through the serial port. 
+
+\-Converts an int32\-\_\-t to network byte order and sends it byte by byte through the given serial port connection to the \-Arduino on the other end. \-Network byte order raw integers can be read by the \-Arduino using the corresponding \char`\"{}read\char`\"{} function in the \-Arduino library, \hyperlink{arduino__libuino_8h}{arduino\-\_\-libuino.\-h} . 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object through which to send data. \\
+\hline
+{\em val} & int32\-\_\-t to be sent to \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes actually sent, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_a1ff0dbebc976c2e8a8816a3423e70d91}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-raw@{ino\-\_\-send\-\_\-raw}}
+\index{ino\-\_\-send\-\_\-raw@{ino\-\_\-send\-\_\-raw}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-raw} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{int}]{frame\-\_\-size\-\_\-bytes}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_a1ff0dbebc976c2e8a8816a3423e70d91}
+
+
+\-Send an array of raw bytes to the \-Arduino through the serial port. 
+
+\-Sends an array of uint8\-\_\-t through the given ino\-\_\-connection\-\_\-t/serial port. 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object through which to send data. \\
+\hline
+{\em buf} & \-Array of uint8\-\_\-t bytes to send to the \-Arduino. \\
+\hline
+{\em frame\-\_\-size\-\_\-bytes} & \-The number of bytes to be sent to the \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes actually sent, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_ad4682497c07404826cbce095ec703ffd}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-uint16@{ino\-\_\-send\-\_\-uint16}}
+\index{ino\-\_\-send\-\_\-uint16@{ino\-\_\-send\-\_\-uint16}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-uint16} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint16\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_ad4682497c07404826cbce095ec703ffd}
+
+
+\-Send a single unsigned 16-\/bit integer to the \-Arduino through the serial port. 
+
+\-Converts an uint16\-\_\-t to network byte order and sends it byte by byte through the given serial port connection to the \-Arduino on the other end. \-Network byte order raw integers can be read by the \-Arduino using the corresponding \char`\"{}read\char`\"{} function in the \-Arduino library, \hyperlink{arduino__libuino_8h}{arduino\-\_\-libuino.\-h} . 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object through which to send data. \\
+\hline
+{\em val} & uint16\-\_\-t to be sent to \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes actually sent, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{libuino_8h_aeadf0136faafafeaef5a1a6e50a00dd7}{\index{libuino.\-h@{libuino.\-h}!ino\-\_\-send\-\_\-uint32@{ino\-\_\-send\-\_\-uint32}}
+\index{ino\-\_\-send\-\_\-uint32@{ino\-\_\-send\-\_\-uint32}!libuino.h@{libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ino\-\_\-send\-\_\-uint32} (
+\begin{DoxyParamCaption}
+\item[{{\bf ino\-\_\-connection\-\_\-t} $\ast$}]{cnx, }
+\item[{uint32\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{libuino_8h_aeadf0136faafafeaef5a1a6e50a00dd7}
+
+
+\-Send a single unsigned 32-\/bit integer to the \-Arduino through the serial port. 
+
+\-Converts a uint32\-\_\-t to network byte order and sends it byte by byte through the given serial port connection to the \-Arduino on the other end. \-Network byte order raw integers can be read by the \-Arduino using the corresponding \char`\"{}read\char`\"{} function in the \-Arduino library, \hyperlink{arduino__libuino_8h}{arduino\-\_\-libuino.\-h} . 
+\begin{DoxyParams}{\-Parameters}
+{\em cnx} & \-Pointer to ino\-\_\-connection\-\_\-t object through which to send data. \\
+\hline
+{\em val} & uint32\-\_\-t to be sent to \-Arduino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of bytes actually sent, or -\/1 on error. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}

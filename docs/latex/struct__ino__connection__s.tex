@@ -1,0 +1,76 @@
+\hypertarget{struct__ino__connection__s}{\section{\-\_\-ino\-\_\-connection\-\_\-s \-Struct \-Reference}
+\label{struct__ino__connection__s}\index{\-\_\-ino\-\_\-connection\-\_\-s@{\-\_\-ino\-\_\-connection\-\_\-s}}
+}
+
+
+\-Data type for storing an \-Arduino connection's settings.  
+
+
+
+
+{\ttfamily \#include $<$libuino.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct__ino__connection__s_aaf26713033414ad7ffa1d7c9ffb414a9}{char $\ast$ \hyperlink{struct__ino__connection__s_aaf26713033414ad7ffa1d7c9ffb414a9}{port}}\label{struct__ino__connection__s_aaf26713033414ad7ffa1d7c9ffb414a9}
+
+\begin{DoxyCompactList}\small\item\em tty(\-C\-O\-M) port \end{DoxyCompactList}\item 
+\hypertarget{struct__ino__connection__s_ac59c26750f9d2b726b21bddac5a6012f}{int \hyperlink{struct__ino__connection__s_ac59c26750f9d2b726b21bddac5a6012f}{baud}}\label{struct__ino__connection__s_ac59c26750f9d2b726b21bddac5a6012f}
+
+\begin{DoxyCompactList}\small\item\em bit rate \end{DoxyCompactList}\item 
+int \hyperlink{struct__ino__connection__s_a8735c98900da1fb30ff57141d3271743}{connect\-\_\-wait}
+\begin{DoxyCompactList}\small\item\em length of time in microseconds to wait for arduino to reboot on connection. \end{DoxyCompactList}\item 
+int \hyperlink{struct__ino__connection__s_afab28b7b3db3a562789bde9c3028bb1f}{raw}
+\begin{DoxyCompactList}\small\item\em whether or not this is a raw connection type. \end{DoxyCompactList}\item 
+int \hyperlink{struct__ino__connection__s_ab8b6a056a21ce7ad93f913b90db50810}{raw\-\_\-size}
+\begin{DoxyCompactList}\small\item\em number of bytes expected in each frame. \end{DoxyCompactList}\item 
+int \hyperlink{struct__ino__connection__s_a84d5f96f8956f9a9f24f33ddf1734004}{raw\-\_\-timeout}
+\begin{DoxyCompactList}\small\item\em length of time to wait for arduino between bytes. \end{DoxyCompactList}\item 
+\hypertarget{struct__ino__connection__s_a0a2e689b7bc4494b879411c0a0a6ec64}{int \hyperlink{struct__ino__connection__s_a0a2e689b7bc4494b879411c0a0a6ec64}{fd}}\label{struct__ino__connection__s_a0a2e689b7bc4494b879411c0a0a6ec64}
+
+\begin{DoxyCompactList}\small\item\em open port; -\/1 if closed or on error \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Data type for storing an \-Arduino connection's settings. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{struct__ino__connection__s_a8735c98900da1fb30ff57141d3271743}{\index{\-\_\-ino\-\_\-connection\-\_\-s@{\-\_\-ino\-\_\-connection\-\_\-s}!connect\-\_\-wait@{connect\-\_\-wait}}
+\index{connect\-\_\-wait@{connect\-\_\-wait}!_ino_connection_s@{\-\_\-ino\-\_\-connection\-\_\-s}}
+\subsubsection[{connect\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-\_\-ino\-\_\-connection\-\_\-s\-::connect\-\_\-wait}}}\label{struct__ino__connection__s_a8735c98900da1fb30ff57141d3271743}
+
+
+length of time in microseconds to wait for arduino to reboot on connection. 
+
+set to zero if arduino model does not reboot automatically on each connection or if autoreboot is disabled. \hypertarget{struct__ino__connection__s_afab28b7b3db3a562789bde9c3028bb1f}{\index{\-\_\-ino\-\_\-connection\-\_\-s@{\-\_\-ino\-\_\-connection\-\_\-s}!raw@{raw}}
+\index{raw@{raw}!_ino_connection_s@{\-\_\-ino\-\_\-connection\-\_\-s}}
+\subsubsection[{raw}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-\_\-ino\-\_\-connection\-\_\-s\-::raw}}}\label{struct__ino__connection__s_afab28b7b3db3a562789bde9c3028bb1f}
+
+
+whether or not this is a raw connection type. 
+
+0 = processed/\-A\-S\-C\-I\-I, terminated by new line character. 1 = raw, unprocessed, read an exact number of bytes. \hypertarget{struct__ino__connection__s_ab8b6a056a21ce7ad93f913b90db50810}{\index{\-\_\-ino\-\_\-connection\-\_\-s@{\-\_\-ino\-\_\-connection\-\_\-s}!raw\-\_\-size@{raw\-\_\-size}}
+\index{raw\-\_\-size@{raw\-\_\-size}!_ino_connection_s@{\-\_\-ino\-\_\-connection\-\_\-s}}
+\subsubsection[{raw\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-\_\-ino\-\_\-connection\-\_\-s\-::raw\-\_\-size}}}\label{struct__ino__connection__s_ab8b6a056a21ce7ad93f913b90db50810}
+
+
+number of bytes expected in each frame. 
+
+zero and ignored unless raw is set to 1. \hypertarget{struct__ino__connection__s_a84d5f96f8956f9a9f24f33ddf1734004}{\index{\-\_\-ino\-\_\-connection\-\_\-s@{\-\_\-ino\-\_\-connection\-\_\-s}!raw\-\_\-timeout@{raw\-\_\-timeout}}
+\index{raw\-\_\-timeout@{raw\-\_\-timeout}!_ino_connection_s@{\-\_\-ino\-\_\-connection\-\_\-s}}
+\subsubsection[{raw\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-\_\-ino\-\_\-connection\-\_\-s\-::raw\-\_\-timeout}}}\label{struct__ino__connection__s_a84d5f96f8956f9a9f24f33ddf1734004}
+
+
+length of time to wait for arduino between bytes. 
+
+raw\-\_\-timeout should be the number of 1/10ths of a second, e.\-g., raw\-\_\-timeout=5 would be 5/10 sec or 1/2 sec. 0 = never timeout, wait until enough bytes are read. ignored unless raw is set to 1 (\-T\-R\-U\-E) 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libuino_8h}{libuino.\-h}\end{DoxyCompactItemize}

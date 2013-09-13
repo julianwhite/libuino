@@ -1,0 +1,274 @@
+\hypertarget{arduino__libuino_8h}{\section{arduino\-\_\-libuino/arduino\-\_\-libuino.h \-File \-Reference}
+\label{arduino__libuino_8h}\index{arduino\-\_\-libuino/arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino/arduino\-\_\-libuino.\-h}}
+}
+{\ttfamily \#include \char`\"{}\-Arduino.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}stdint.\-h\char`\"{}}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union__ino__int16}{\-\_\-ino\-\_\-int16}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 16-\/bit integers and byte arrays. \end{DoxyCompactList}\item 
+union \hyperlink{union__ino__int32}{\-\_\-ino\-\_\-int32}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed and unsigned 32-\/bit integers and byte arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \hyperlink{union__ino__int16}{\-\_\-ino\-\_\-int16} \hyperlink{arduino__libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}{ino\-\_\-int16}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed, unsigned, and byte array representations of 16-\/bit integers. \end{DoxyCompactList}\item 
+typedef union \hyperlink{union__ino__int32}{\-\_\-ino\-\_\-int32} \hyperlink{arduino__libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}{ino\-\_\-int32}
+\begin{DoxyCompactList}\small\item\em \-Data type for converting between signed, unsigned, and byte array representations of 32-\/bit integers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\-\_\-t \hyperlink{arduino__libuino_8h_a8d12af9892c85e026469c87e37f4d909}{ino\-\_\-read\-\_\-int16} ()
+\begin{DoxyCompactList}\small\item\em \-Read 16-\/bit signed integer from computer through serial port. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{arduino__libuino_8h_ad433722b32befe49bddbdd42edb90d90}{ino\-\_\-read\-\_\-uint16} ()
+\begin{DoxyCompactList}\small\item\em \-Read 16-\/bit unsigned integer from computer through serial port. \end{DoxyCompactList}\item 
+int32\-\_\-t \hyperlink{arduino__libuino_8h_ac0ca4fc7400dcf0739a41e115975a739}{ino\-\_\-read\-\_\-int32} ()
+\begin{DoxyCompactList}\small\item\em \-Read 32-\/bit signed integer from computer through serial port. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{arduino__libuino_8h_ae3bf33781562fb45ba32ee834c3afd52}{ino\-\_\-read\-\_\-uint32} ()
+\begin{DoxyCompactList}\small\item\em \-Read 32-\/bit unsigned integer from computer through serial port. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_a6ca0850925ef21ad80c91d75b33e604f}{ino\-\_\-send\-\_\-int16} (int16\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Send 16-\/bit signed integer to computer through serial port. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_ab4d410d88ec47bd024c565b87d5036c6}{ino\-\_\-send\-\_\-uint16} (uint16\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Send 16-\/bit unsigned integer to computer through serial port. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_a668de2241984d9e60920e6f7fcca9aae}{ino\-\_\-send\-\_\-int32} (int32\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Send 32-\/bit signed integer to computer through serial port. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_aa9c886173b119afa8390065130c2a4d9}{ino\-\_\-send\-\_\-uint32} (uint32\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Send 32-\/bit unsigned integer to computer through serial port. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_a3f365f68aeff5af9e63a5d7ec3fa2f45}{ino\-\_\-read\-\_\-raw} (uint8\-\_\-t $\ast$buf, int nbytes)
+\begin{DoxyCompactList}\small\item\em \-Read raw bytes from a serial connection. \end{DoxyCompactList}\item 
+void \hyperlink{arduino__libuino_8h_ac81d0c3791469734d1550a9aee388330}{ino\-\_\-send\-\_\-raw} (uint8\-\_\-t $\ast$buf, int nbytes)
+\begin{DoxyCompactList}\small\item\em \-Send an array of raw bytes to the computer through the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\begin{DoxyVersion}{\-Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{\-Author}
+\-Julian \-White 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-August 28, 2013 \-Julian \-White
+\end{DoxyCopyright}
+\hypertarget{libuino_8h_LICENSE}{}\subsection{\-L\-I\-C\-E\-N\-S\-E}\label{libuino_8h_LICENSE}
+\-This program is free software; you can redistribute it and/or modify it under the terms of the \-G\-N\-U \-Lesser \-General \-Public \-License as published by the \-Free \-Software \-Foundation; either version 3 of the \-License, or (at your option) any later version.
+
+\-This program is distributed in the hope that it will be useful, but \-W\-I\-T\-H\-O\-U\-T \-A\-N\-Y \-W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E. \-See the \-G\-N\-U \-Lesser \-General \-Public \-License for more details at \href{http://www.gnu.org/licenses/lgpl.html}{\tt http\-://www.\-gnu.\-org/licenses/lgpl.\-html}\hypertarget{libuino_8h_DESCRIPTION}{}\subsection{\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N}\label{libuino_8h_DESCRIPTION}
+\-Arduino library to ease serial communication with computers, particularly sending and receiving numeric data to/from a computer via \-U\-A\-R\-T/serial/\-U\-S\-B. \-This library will send and receive 16-\/bit and 32-\/bit signed or unsigned integers. \-All integers are converted to network byte order for sending and back into host byte order when receiving integer data. \-To use this library, more than likely you will also want to use arduino\-\_\-libuino's sister library, a.\-k.\-a simply \char`\"{}libuino,\char`\"{} on the attached computer on the other side of the \-Arduino serial port. \-To write \-C applications that will interface with this arduino\-\_\-libuino library, simply include \hyperlink{libuino_8h}{libuino.\-h} in the code you write for the \-P\-C side of the serial connection. 
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{arduino__libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-int16@{ino\-\_\-int16}}
+\index{ino\-\_\-int16@{ino\-\_\-int16}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf \-\_\-ino\-\_\-int16}
+ {\bf ino\-\_\-int16}}}\label{arduino__libuino_8h_a9d99a0e1265bbea0125183bc5ed7e151}
+
+
+\-Data type for converting between signed, unsigned, and byte array representations of 16-\/bit integers. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-int32@{ino\-\_\-int32}}
+\index{ino\-\_\-int32@{ino\-\_\-int32}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf \-\_\-ino\-\_\-int32}
+ {\bf ino\-\_\-int32}}}\label{arduino__libuino_8h_a859cccdab6fbe6f4c67d8cb5a12029c6}
+
+
+\-Data type for converting between signed, unsigned, and byte array representations of 32-\/bit integers. 
+
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{arduino__libuino_8h_a8d12af9892c85e026469c87e37f4d909}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-read\-\_\-int16@{ino\-\_\-read\-\_\-int16}}
+\index{ino\-\_\-read\-\_\-int16@{ino\-\_\-read\-\_\-int16}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t {\bf ino\-\_\-read\-\_\-int16} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_a8d12af9892c85e026469c87e37f4d909}
+
+
+\-Read 16-\/bit signed integer from computer through serial port. 
+
+\-Function to read a raw signed 16-\/bit integer from the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be sending this integer from the corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}send\char`\"{} function from the attached computer. \begin{DoxyReturn}{\-Returns}
+16-\/bit signed integer read. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_ac0ca4fc7400dcf0739a41e115975a739}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-read\-\_\-int32@{ino\-\_\-read\-\_\-int32}}
+\index{ino\-\_\-read\-\_\-int32@{ino\-\_\-read\-\_\-int32}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t {\bf ino\-\_\-read\-\_\-int32} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_ac0ca4fc7400dcf0739a41e115975a739}
+
+
+\-Read 32-\/bit signed integer from computer through serial port. 
+
+\-Function to read a raw signed 32-\/bit integer from the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be sending this integer from the corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}send\char`\"{} function from the attached computer. \begin{DoxyReturn}{\-Returns}
+32-\/bit signed integer read. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_a3f365f68aeff5af9e63a5d7ec3fa2f45}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-read\-\_\-raw@{ino\-\_\-read\-\_\-raw}}
+\index{ino\-\_\-read\-\_\-raw@{ino\-\_\-read\-\_\-raw}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-read\-\_\-raw} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{int}]{nbytes}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_a3f365f68aeff5af9e63a5d7ec3fa2f45}
+
+
+\-Read raw bytes from a serial connection. 
+
+\-Reads an exact number of raw bytes from the serial port into an array of uint8\-\_\-t. \-Use this function for more complex or custom interpretation of the bytes delivered. 
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Pointer to the beginning of an array of uint8\-\_\-t. \\
+\hline
+{\em nbytes} & \-The exact number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_ad433722b32befe49bddbdd42edb90d90}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-read\-\_\-uint16@{ino\-\_\-read\-\_\-uint16}}
+\index{ino\-\_\-read\-\_\-uint16@{ino\-\_\-read\-\_\-uint16}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t {\bf ino\-\_\-read\-\_\-uint16} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_ad433722b32befe49bddbdd42edb90d90}
+
+
+\-Read 16-\/bit unsigned integer from computer through serial port. 
+
+\-Function to read a raw unsigned 16-\/bit integer from the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be sending this integer from the corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}send\char`\"{} function from the attached computer. \begin{DoxyReturn}{\-Returns}
+16-\/bit unsigned integer read. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_ae3bf33781562fb45ba32ee834c3afd52}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-read\-\_\-uint32@{ino\-\_\-read\-\_\-uint32}}
+\index{ino\-\_\-read\-\_\-uint32@{ino\-\_\-read\-\_\-uint32}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-read\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf ino\-\_\-read\-\_\-uint32} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_ae3bf33781562fb45ba32ee834c3afd52}
+
+
+\-Read 32-\/bit unsigned integer from computer through serial port. 
+
+\-Function to read a raw unsigned 32-\/bit integer from the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be sending this integer from the corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}send\char`\"{} function from the attached computer. \begin{DoxyReturn}{\-Returns}
+32-\/bit unsigned integer read. 
+\end{DoxyReturn}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_a6ca0850925ef21ad80c91d75b33e604f}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-send\-\_\-int16@{ino\-\_\-send\-\_\-int16}}
+\index{ino\-\_\-send\-\_\-int16@{ino\-\_\-send\-\_\-int16}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-int16}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-send\-\_\-int16} (
+\begin{DoxyParamCaption}
+\item[{int16\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_a6ca0850925ef21ad80c91d75b33e604f}
+
+
+\-Send 16-\/bit signed integer to computer through serial port. 
+
+\-Function to send a raw signed 16-\/bit integer across the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be reading this integer with a corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}read\char`\"{} function on the attached computer. 
+\begin{DoxyParams}{\-Parameters}
+{\em n} & 16-\/bit signed integer to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_a668de2241984d9e60920e6f7fcca9aae}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-send\-\_\-int32@{ino\-\_\-send\-\_\-int32}}
+\index{ino\-\_\-send\-\_\-int32@{ino\-\_\-send\-\_\-int32}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-int32}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-send\-\_\-int32} (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_a668de2241984d9e60920e6f7fcca9aae}
+
+
+\-Send 32-\/bit signed integer to computer through serial port. 
+
+\-Function to send a raw signed 32-\/bit integer across the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be reading this integer with a corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}read\char`\"{} function on the attached computer. 
+\begin{DoxyParams}{\-Parameters}
+{\em n} & 32-\/bit signed integer to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_ac81d0c3791469734d1550a9aee388330}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-send\-\_\-raw@{ino\-\_\-send\-\_\-raw}}
+\index{ino\-\_\-send\-\_\-raw@{ino\-\_\-send\-\_\-raw}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-send\-\_\-raw} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{int}]{nbytes}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_ac81d0c3791469734d1550a9aee388330}
+
+
+\-Send an array of raw bytes to the computer through the serial port. 
+
+\-Sends an array of uint8\-\_\-t through the serial port. 
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Array of uint8\-\_\-t bytes to send. \\
+\hline
+{\em nbytes} & \-The number of bytes to be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_ab4d410d88ec47bd024c565b87d5036c6}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-send\-\_\-uint16@{ino\-\_\-send\-\_\-uint16}}
+\index{ino\-\_\-send\-\_\-uint16@{ino\-\_\-send\-\_\-uint16}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-send\-\_\-uint16} (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_ab4d410d88ec47bd024c565b87d5036c6}
+
+
+\-Send 16-\/bit unsigned integer to computer through serial port. 
+
+\-Function to send a raw unsigned 16-\/bit integer across the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be reading this integer with a corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}read\char`\"{} function on the attached computer. 
+\begin{DoxyParams}{\-Parameters}
+{\em n} & 16-\/bit unsigned integer to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
+\hypertarget{arduino__libuino_8h_aa9c886173b119afa8390065130c2a4d9}{\index{arduino\-\_\-libuino.\-h@{arduino\-\_\-libuino.\-h}!ino\-\_\-send\-\_\-uint32@{ino\-\_\-send\-\_\-uint32}}
+\index{ino\-\_\-send\-\_\-uint32@{ino\-\_\-send\-\_\-uint32}!arduino_libuino.h@{arduino\-\_\-libuino.\-h}}
+\subsubsection[{ino\-\_\-send\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ino\-\_\-send\-\_\-uint32} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}\label{arduino__libuino_8h_aa9c886173b119afa8390065130c2a4d9}
+
+
+\-Send 32-\/bit unsigned integer to computer through serial port. 
+
+\-Function to send a raw unsigned 32-\/bit integer across the \-Serial interface in network byte order (i.\-e., big endian). \-Serial interface must be initialized with \-Serial.\-begin() prior to function call. \-More than likely you will be reading this integer with a corresponding \hyperlink{libuino_8h}{libuino.\-h} \char`\"{}read\char`\"{} function on the attached computer. 
+\begin{DoxyParams}{\-Parameters}
+{\em n} & 32-\/bit unsigned integer to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{\-Since}
+0.\-1 
+\end{DoxySince}
