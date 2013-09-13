@@ -127,7 +127,7 @@ Please note that each and every example C program in the
 libuino/examples/ folder, there is a corresponding, similarly
 named sketch (.ino file) in libuino/arduino_libuino/examples/.
 
-From your Arduino IDE or intools or commandline AVR compiler of
+From your Arduino IDE or inotools or commandline AVR compiler of
 choice, build and upload libuino_helloworld.ino to your Arduino.
 
 To execute the examples, return to the libuino/examples/ directory,
