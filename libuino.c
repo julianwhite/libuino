@@ -78,7 +78,7 @@
  * @since 0.1
  */
 ino_connection_t *
-ino_connection_new(char *port, int baud, int connect_wait)
+ino_connection_new(char *port, speed_t baud, int connect_wait)
 {
 	ino_connection_t *cnx = NULL;
 	
@@ -124,7 +124,7 @@ ino_connection_new(char *port, int baud, int connect_wait)
  * @since 0.1
  */
 ino_connection_t *
-ino_connection_raw(char *port, int baud, int connect_wait, int frame_size_bytes, int read_timeout)
+ino_connection_raw(char *port, speed_t baud, int connect_wait, int frame_size_bytes, int read_timeout)
 {
 	ino_connection_t *cnx = NULL;
 	

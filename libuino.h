@@ -104,7 +104,7 @@ ino_int32;
 typedef struct _ino_connection_s
 {
 	char *port;					/**< tty(COM) port */
-	int baud;						/**< bit rate */
+	speed_t baud;				/**< bit rate */
 	int connect_wait;		/**< length of time in microseconds to wait for arduino to reboot
 											   on connection. set to zero if arduino model does not reboot
 											   automatically on each connection or if autoreboot is disabled. */
@@ -143,7 +143,7 @@ ino_connection_t;
  * @return Pointer to new ino_connection_t object containing new configuration.
  * @since 0.1
  */
-ino_connection_t *ino_connection_new(char *port, int baud, int connect_wait);
+ino_connection_t *ino_connection_new(char *port, speed_t baud, int connect_wait);
 
 /**
  * Create a new raw, unprocessed Arduino connection configuration object.
@@ -171,7 +171,7 @@ ino_connection_t *ino_connection_new(char *port, int baud, int connect_wait);
  * @return Pointer to new ino_connection_t object containing new configuration.
  * @since 0.1
  */
-ino_connection_t *ino_connection_raw(char *port, int baud, int connect_wait, int frame_size_bytes, int read_timeout);
+ino_connection_t *ino_connection_raw(char *port, speed_t baud, int connect_wait, int frame_size_bytes, int read_timeout);
 
 /**
  * Close Arduino connection and free config object from memory. 
