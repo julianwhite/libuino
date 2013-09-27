@@ -123,11 +123,11 @@ On the Arduino side, after installing arduino_libuino into your
 Arduino environment, the arduino_libuino/examples should appear
 in your examples in your Arduino IDE.  If not then you may just
 copy each of the example projects into you sketchbook manually.
-Please note that each and every example C program in the 
+Please note that for each and every example C program in the 
 libuino/examples/ folder, there is a corresponding, similarly
 named sketch (.ino file) in libuino/arduino_libuino/examples/.
 
-From your Arduino IDE or intools or commandline AVR compiler of
+From your Arduino IDE or inotools or commandline AVR compiler of
 choice, build and upload libuino_helloworld.ino to your Arduino.
 
 To execute the examples, return to the libuino/examples/ directory,
