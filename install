@@ -1,0 +1,10 @@
+#!/bin/bash
+
+gcc -c -Wall -Werror -fPIC libuino.c
+gcc -shared -o libuino.so libuino.o
+cp libuino.so /usr/local/lib/
+cp libuino.h /usr/local/include/
+cd /usr/local/lib
+ldconfig
+
+exit 0

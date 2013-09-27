@@ -62,7 +62,13 @@ first, especially the Raspberry Pi community.
 
 INSTALLING LIBUINO AS SHARED LIBRARY (LINUX)
 ============================================
-To install the libuino library as a shared library
+Included for Linux users is an install script which
+will automatically compile and install the PC side library.
+Navigate to the libuino base directory, and run the following:
+
+	sudo ./install
+
+To manually install the libuino library as a shared library
 and to be able to dynamically link the lib into your
 applications using the -luino option, run these commands:
 
