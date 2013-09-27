@@ -192,23 +192,17 @@ ino_open(ino_connection_t *cnx)
 		
 			/* init toptions with current port settings */
 			tcgetattr(cnx->fd, &toptions);
+			toptions.c_cflag = 0;
+			toptions.c_iflag = 0;
+			toptions.c_oflag = 0;
+			toptions.c_lflag = 0;
 
 			/* new port settings */
 			cfsetispeed(&toptions, cnx->baud);	/* input baud*/
 			cfsetospeed(&toptions, cnx->baud);	/* output baud*/
-			toptions.c_cflag &= ~PARENB;	/* no parity */
-			toptions.c_cflag &= ~CSTOPB;	/* no stop bits */
-			toptions.c_cflag &= ~CSIZE;		/* clear size bits */
-			toptions.c_cflag |= CS8;			/* 8 data bits */
-		
+			toptions.c_cflag |= ( CS8 | HUPCL | CREAD | CLOCAL );
 			if ( cnx->raw )
 			{
-				/* turn off processing and set up for raw data */
-				toptions.c_iflag &= ~(IGNBRK | BRKINT | ICRNL | 
-				                INLCR | PARMRK | INPCK | ISTRIP | IXON);
-				toptions.c_oflag = 0;
-				toptions.c_lflag &= ~(ECHO | ECHONL | ICANON | IEXTEN | ISIG);
-		
 				/* set min bytes and timeout */
 				toptions.c_cc[VMIN]  = cnx->raw_size;
 				toptions.c_cc[VTIME] = cnx->raw_timeout;
@@ -216,7 +210,7 @@ ino_open(ino_connection_t *cnx)
 			else
 			{
 				/* canonical, turn on processing */
-				toptions.c_lflag |= ICANON;
+				toptions.c_lflag |= ( ICANON | ECHOE | ECHOK | ECHOCTL | ECHOKE );
 			}
 			
 			/* commit changes to port settings */
